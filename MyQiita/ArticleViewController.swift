@@ -11,12 +11,26 @@ import UIKit
 class ArticleViewController: UIViewController {
     
     var url = ""
+    var body = ""
     private var webView = UIWebView()
     
     override func viewDidLoad() {
         webView.frame = view.frame
+        webView.delegate = self
         view.addSubview(webView)
-        let request = URLRequest(url: URL(string: url)!)
+        let url = Bundle.main.url(forResource: "hello", withExtension: "html")
+        let request = URLRequest(url: url!)
         webView.loadRequest(request)
+    }
+}
+
+extension ArticleViewController: UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+
+        print(body)
+        let md = "# 日本語であそぼ\n ##aaa"
+        let js = "draw('\(md)'));"
+        self.webView.stringByEvaluatingJavaScript(from: js)
     }
 }

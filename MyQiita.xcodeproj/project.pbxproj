@@ -18,6 +18,8 @@
 		C9004A3720774E6F009155DD /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A3620774E6F009155DD /* ArticleTableViewCell.swift */; };
 		C9004A392077553E009155DD /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A382077553E009155DD /* ArticleViewController.swift */; };
 		C9004A3B20775B18009155DD /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A3A20775B18009155DD /* Extension+UIColor.swift */; };
+		C9004A3D2078B374009155DD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A3C2078B374009155DD /* Article.swift */; };
+		C94656472079F5DB00300B1C /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = C94656462079F5DB00300B1C /* hello.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		C9004A3620774E6F009155DD /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		C9004A382077553E009155DD /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		C9004A3A20775B18009155DD /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		C9004A3C2078B374009155DD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		C94656462079F5DB00300B1C /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hello.html; sourceTree = SOURCE_ROOT; };
 		DE2D7CC620E47FCD3B0E2C4C /* Pods-MyQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyQiita.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyQiita/Pods-MyQiita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +134,8 @@
 				C9004A0620766EA8009155DD /* AppDelegate.swift */,
 				C9004A0820766EA8009155DD /* ViewController.swift */,
 				C9004A382077553E009155DD /* ArticleViewController.swift */,
-				C9004A34207748A1009155DD /* Qiita.swift */,
+				C94656462079F5DB00300B1C /* hello.html */,
+				C9004A3E2078B37B009155DD /* Api */,
 				C9004A3620774E6F009155DD /* ArticleTableViewCell.swift */,
 				C9004A3A20775B18009155DD /* Extension+UIColor.swift */,
 				C9004A0D20766EA8009155DD /* Assets.xcassets */,
@@ -156,6 +161,15 @@
 				C9004A2820766EA8009155DD /* Info.plist */,
 			);
 			path = MyQiitaUITests;
+			sourceTree = "<group>";
+		};
+		C9004A3E2078B37B009155DD /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				C9004A34207748A1009155DD /* Qiita.swift */,
+				C9004A3C2078B374009155DD /* Article.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +284,7 @@
 			files = (
 				C9004A1120766EA8009155DD /* LaunchScreen.storyboard in Resources */,
 				C9004A0E20766EA8009155DD /* Assets.xcassets in Resources */,
+				C94656472079F5DB00300B1C /* hello.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9004A3D2078B374009155DD /* Article.swift in Sources */,
 				C9004A3720774E6F009155DD /* ArticleTableViewCell.swift in Sources */,
 				C9004A0920766EA8009155DD /* ViewController.swift in Sources */,
 				C9004A392077553E009155DD /* ArticleViewController.swift in Sources */,

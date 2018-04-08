@@ -11,14 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     private var tableView = UITableView()
-    fileprivate var items: [Item] = []
+    fileprivate var articles: [Article] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "記事一覧"
         setUpTableView: do {
-
             tableView.frame = view.frame
             tableView.dataSource = self
             tableView.delegate = self
@@ -26,11 +25,13 @@ class ViewController: UIViewController {
             view.addSubview(tableView)
         }
 
-        Qiita().fetchItem(completion: { (items) in
-            self.items = items
-            debugPrint(items)
-            DispatchQueue.main.async {
+        QiitaSession.send(ArticlePostRequest(), completion: { response in
+            switch response {
+            case .success(let articles):
+                self.articles = articles
                 self.tableView.reloadData()
+            case .failure(let message):
+                print(message)
             }
         })
     }
@@ -44,7 +45,7 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let c = ArticleViewController()
-        c.url = items[indexPath.row].url
+        c.body = articles[indexPath.row].body
         navigationController?.pushViewController(c, animated: true)
     }
 }
@@ -56,12 +57,12 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(item: items[indexPath.row])
+        cell.configure(article: articles[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return articles.count
     }
 }
 

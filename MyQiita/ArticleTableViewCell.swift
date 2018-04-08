@@ -85,13 +85,13 @@ class ArticleTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(item: Item) {
-        iconView.kf.setImage(with:  URL(string: item.user.iconUrl))
-        titleLabel.text = item.title
-        idLabel.text = item.user.id
+    func configure(article: Article) {
+        iconView.kf.setImage(with:  URL(string: article.user.iconUrl))
+        titleLabel.text = article.title
+        idLabel.text = article.user.id
         
         var tagString = ""
-        item.tags.forEach { tagString += " \($0.name)"}
+        article.tags.forEach { tagString += " \($0.name)"}
         tagLabel.text = tagString
     }
     
