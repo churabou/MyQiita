@@ -10,6 +10,8 @@ import Foundation
 
 struct AccessToken: Codable {
     var token: String
+    var client_id: String
+    var scopes: [String]
 }
 
 
@@ -18,13 +20,11 @@ struct AccessTokenPostRequest: Request {
     typealias ResponseType = AccessToken
     
     struct Param: Encodable {
-        var client_id: String
-        var client_secret: String
+        var client_id = Config.clientId
+        var client_secret = Config.secret
         var code: String
         
         init(code: String) {
-            self.client_id = Config.clientId
-            self.client_secret = Config.secret
             self.code = code
         }
     }

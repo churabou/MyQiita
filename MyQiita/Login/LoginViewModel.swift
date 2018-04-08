@@ -10,8 +10,15 @@ import UIKit
 
 class LoginViewModel: NSObject {
     
-    fileprivate let endpoint = "https://qiita.com/api/v2/oauth/authorize"
+    private var navigator: LoginViewNavigator?
     
+    convenience init(_ navigator: LoginViewNavigator) {
+        self.init()
+        self.navigator = navigator
+    }
+    
+    fileprivate let endpoint = "https://qiita.com/api/v2/oauth/authorize"
+
     func loadLoginPage(_ webView: UIWebView) {
 
         guard var urlComponents = URLComponents(string: endpoint) else {
@@ -31,9 +38,10 @@ class LoginViewModel: NSObject {
         QiitaSession.send(request) { (response) in
             switch response {
             case .success(let token):
-                print(token)
+                Config.accessToken = token
+                self.navigator?.navigate(.home)
             case .failure(let message):
-                print("失敗した。")
+                print("失敗した。\(message)")
             }
         }
     }

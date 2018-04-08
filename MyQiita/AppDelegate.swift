@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().backgroundColor = .pink

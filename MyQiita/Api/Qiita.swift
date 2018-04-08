@@ -36,19 +36,27 @@ struct QiitaSession {
                 return
             }
             
+
             guard let httpResponse = response as? HTTPURLResponse else {
                 return
             }
 
-            let status = httpResponse.statusCode
-            print(status)
-
-            do {
-                let model = try request.decode(jsonData)
-                completion(.success(response: model))
-            } catch {
-                print(error.localizedDescription)
+            if case (200..<300) = httpResponse.statusCode {
+                
+                do {
+                    let model = try request.decode(jsonData)
+//                    DispatchQueue.main.async {
+                        completion(.success(response: model))
+//                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+                completion(.failure(message: "code: \(httpResponse.statusCode)"))
             }
+
+
+
         }.resume()
     }
 }
