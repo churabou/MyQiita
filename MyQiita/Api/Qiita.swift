@@ -45,9 +45,9 @@ struct QiitaSession {
                 
                 do {
                     let model = try request.decode(jsonData)
-//                    DispatchQueue.main.async {
+                    DispatchQueue.main.async {
                         completion(.success(response: model))
-//                    }
+                    }
                 } catch {
                     print(error.localizedDescription)
                 }
