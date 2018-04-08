@@ -19,7 +19,7 @@ class LoginViewModel: NSObject {
         }
         
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: ""),
+            URLQueryItem(name: "client_id", value: Config.clientId),
             URLQueryItem(name: "scope", value: "read_qiita")
         ]
         webView.loadRequest(URLRequest(url: urlComponents.url!))

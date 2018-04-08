@@ -19,6 +19,8 @@
 		C9004A392077553E009155DD /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A382077553E009155DD /* ArticleViewController.swift */; };
 		C9004A3B20775B18009155DD /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A3A20775B18009155DD /* Extension+UIColor.swift */; };
 		C9004A3D2078B374009155DD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A3C2078B374009155DD /* Article.swift */; };
+		C93E400D207A5C31002D306B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E400C207A5C31002D306B /* Config.swift */; };
+		C93E400F207A5C8D002D306B /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E400E207A5C8D002D306B /* AccessToken.swift */; };
 		C94656472079F5DB00300B1C /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = C94656462079F5DB00300B1C /* hello.html */; };
 		C94656D5207A39E400300B1C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D4207A39E400300B1C /* loginViewController.swift */; };
 		C94656D7207A427F00300B1C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D6207A427F00300B1C /* LoginViewModel.swift */; };
@@ -61,6 +63,8 @@
 		C9004A382077553E009155DD /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		C9004A3A20775B18009155DD /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		C9004A3C2078B374009155DD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		C93E400C207A5C31002D306B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		C93E400E207A5C8D002D306B /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		C94656462079F5DB00300B1C /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hello.html; sourceTree = SOURCE_ROOT; };
 		C94656D4207A39E400300B1C /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		C94656D6207A427F00300B1C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C9004A0620766EA8009155DD /* AppDelegate.swift */,
+				C93E400C207A5C31002D306B /* Config.swift */,
 				C94656D8207A42A100300B1C /* Login */,
 				C9004A0820766EA8009155DD /* ViewController.swift */,
 				C9004A382077553E009155DD /* ArticleViewController.swift */,
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C9004A34207748A1009155DD /* Qiita.swift */,
+				C93E400E207A5C8D002D306B /* AccessToken.swift */,
 				C9004A3C2078B374009155DD /* Article.swift */,
 			);
 			path = Api;
@@ -386,8 +392,10 @@
 				C94656D5207A39E400300B1C /* loginViewController.swift in Sources */,
 				C9004A0720766EA8009155DD /* AppDelegate.swift in Sources */,
 				C9004A35207748A1009155DD /* Qiita.swift in Sources */,
+				C93E400D207A5C31002D306B /* Config.swift in Sources */,
 				C9004A3B20775B18009155DD /* Extension+UIColor.swift in Sources */,
 				C94656D7207A427F00300B1C /* LoginViewModel.swift in Sources */,
+				C93E400F207A5C8D002D306B /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

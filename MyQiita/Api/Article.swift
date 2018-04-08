@@ -26,3 +26,14 @@ struct Article: Codable {
         var name: String
     }
 }
+
+
+struct ArticlePostRequest: Request {
+    
+    typealias ResponseType = [Article]
+    var url = ""
+    
+    func build() -> URLRequest {
+        return URLRequest(url: URL(string: "https://qiita.com/api/v2/items")!)
+    }
+}
