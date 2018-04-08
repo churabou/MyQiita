@@ -28,8 +28,11 @@ class ViewController: UIViewController {
         QiitaSession.send(ArticlePostRequest(), completion: { response in
             switch response {
             case .success(let articles):
+                print(articles)
                 self.articles = articles
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             case .failure(let message):
                 print(message)
             }
