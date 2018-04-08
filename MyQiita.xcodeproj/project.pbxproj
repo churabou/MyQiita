@@ -22,6 +22,9 @@
 		C93E400D207A5C31002D306B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E400C207A5C31002D306B /* Config.swift */; };
 		C93E400F207A5C8D002D306B /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E400E207A5C8D002D306B /* AccessToken.swift */; };
 		C93E4011207A800F002D306B /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C93E4010207A800F002D306B /* LaunchScreen.png */; };
+		C93E4015207A81E1002D306B /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4014207A81E1002D306B /* LoginNavigator.swift */; };
+		C93E4017207A8397002D306B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4016207A8397002D306B /* AuthController.swift */; };
+		C93E401A207A841B002D306B /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4019207A841B002D306B /* AuthNavigator.swift */; };
 		C94656472079F5DB00300B1C /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = C94656462079F5DB00300B1C /* hello.html */; };
 		C94656D5207A39E400300B1C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D4207A39E400300B1C /* loginViewController.swift */; };
 		C94656D7207A427F00300B1C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D6207A427F00300B1C /* LoginViewModel.swift */; };
@@ -67,6 +70,9 @@
 		C93E400C207A5C31002D306B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C93E400E207A5C8D002D306B /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		C93E4010207A800F002D306B /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = SOURCE_ROOT; };
+		C93E4014207A81E1002D306B /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
+		C93E4016207A8397002D306B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		C93E4019207A841B002D306B /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
 		C94656462079F5DB00300B1C /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hello.html; sourceTree = SOURCE_ROOT; };
 		C94656D4207A39E400300B1C /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		C94656D6207A427F00300B1C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C9004A0620766EA8009155DD /* AppDelegate.swift */,
+				C93E4018207A839D002D306B /* Auth */,
 				C93E400C207A5C31002D306B /* Config.swift */,
 				C94656D8207A42A100300B1C /* Login */,
 				C9004A0820766EA8009155DD /* ViewController.swift */,
@@ -186,11 +193,21 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
+		C93E4018207A839D002D306B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C93E4016207A8397002D306B /* AuthController.swift */,
+				C93E4019207A841B002D306B /* AuthNavigator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		C94656D8207A42A100300B1C /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				C94656D6207A427F00300B1C /* LoginViewModel.swift */,
 				C94656D4207A39E400300B1C /* loginViewController.swift */,
+				C93E4014207A81E1002D306B /* LoginNavigator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -392,6 +409,9 @@
 				C9004A3D2078B374009155DD /* Article.swift in Sources */,
 				C9004A3720774E6F009155DD /* ArticleTableViewCell.swift in Sources */,
 				C9004A0920766EA8009155DD /* ViewController.swift in Sources */,
+				C93E4015207A81E1002D306B /* LoginNavigator.swift in Sources */,
+				C93E4017207A8397002D306B /* AuthController.swift in Sources */,
+				C93E401A207A841B002D306B /* AuthNavigator.swift in Sources */,
 				C9004A392077553E009155DD /* ArticleViewController.swift in Sources */,
 				C94656D5207A39E400300B1C /* loginViewController.swift in Sources */,
 				C9004A0720766EA8009155DD /* AppDelegate.swift in Sources */,
