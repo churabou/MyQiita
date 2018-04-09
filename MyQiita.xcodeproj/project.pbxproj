@@ -30,6 +30,10 @@
 		C94656D7207A427F00300B1C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D6207A427F00300B1C /* AuthViewModel.swift */; };
 		C9F4C7F7207B154000FFD7B0 /* LoginUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C7F6207B154000FFD7B0 /* LoginUserController.swift */; };
 		C9F4C7F9207B188500FFD7B0 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C7F8207B188500FFD7B0 /* Navigator.swift */; };
+		C9F4C7FD207B228500FFD7B0 /* AuthenticatedUserGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C7FC207B228400FFD7B0 /* AuthenticatedUserGetRequest.swift */; };
+		C9F4C7FF207B233500FFD7B0 /* LoginUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C7FE207B233500FFD7B0 /* LoginUserViewModel.swift */; };
+		C9F4C802207B23EE00FFD7B0 /* LoginUserNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C801207B23EE00FFD7B0 /* LoginUserNavigator.swift */; };
+		C9F4C804207B253E00FFD7B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		C94656D6207A427F00300B1C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C9F4C7F6207B154000FFD7B0 /* LoginUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserController.swift; sourceTree = "<group>"; };
 		C9F4C7F8207B188500FFD7B0 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		C9F4C7FC207B228400FFD7B0 /* AuthenticatedUserGetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserGetRequest.swift; sourceTree = "<group>"; };
+		C9F4C7FE207B233500FFD7B0 /* LoginUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserViewModel.swift; sourceTree = "<group>"; };
+		C9F4C801207B23EE00FFD7B0 /* LoginUserNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserNavigator.swift; sourceTree = "<group>"; };
+		C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE2D7CC620E47FCD3B0E2C4C /* Pods-MyQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyQiita.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyQiita/Pods-MyQiita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,8 +164,10 @@
 				C9F4C7F8207B188500FFD7B0 /* Navigator.swift */,
 				C93E4018207A839D002D306B /* Login */,
 				C94656D8207A42A100300B1C /* Auth */,
-				C9004A0820766EA8009155DD /* ViewController.swift */,
+				C9F4C800207B234600FFD7B0 /* AuthedUser */,
+				C9F4C805207B254300FFD7B0 /* Home */,
 				C9004A382077553E009155DD /* ArticleViewController.swift */,
+				C9004A0820766EA8009155DD /* ViewController.swift */,
 				C94656462079F5DB00300B1C /* hello.html */,
 				C9004A3E2078B37B009155DD /* Api */,
 				C9004A3620774E6F009155DD /* ArticleTableViewCell.swift */,
@@ -194,6 +204,7 @@
 				C9004A34207748A1009155DD /* Qiita.swift */,
 				C93E400E207A5C8D002D306B /* AccessToken.swift */,
 				C9004A3C2078B374009155DD /* Article.swift */,
+				C9F4C7FC207B228400FFD7B0 /* AuthenticatedUserGetRequest.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -203,7 +214,6 @@
 			children = (
 				C93E4016207A8397002D306B /* LoginController.swift */,
 				C93E4019207A841B002D306B /* LoginNavigator.swift */,
-				C9F4C7F6207B154000FFD7B0 /* LoginUserController.swift */,
 			);
 			name = Login;
 			path = Auth_;
@@ -217,6 +227,24 @@
 				C93E4014207A81E1002D306B /* AuthViewNavigator.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		C9F4C800207B234600FFD7B0 /* AuthedUser */ = {
+			isa = PBXGroup;
+			children = (
+				C9F4C7F6207B154000FFD7B0 /* LoginUserController.swift */,
+				C9F4C801207B23EE00FFD7B0 /* LoginUserNavigator.swift */,
+				C9F4C7FE207B233500FFD7B0 /* LoginUserViewModel.swift */,
+			);
+			path = AuthedUser;
+			sourceTree = "<group>";
+		};
+		C9F4C805207B254300FFD7B0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,15 +444,19 @@
 				C9004A3D2078B374009155DD /* Article.swift in Sources */,
 				C9004A3720774E6F009155DD /* ArticleTableViewCell.swift in Sources */,
 				C9004A0920766EA8009155DD /* ViewController.swift in Sources */,
+				C9F4C802207B23EE00FFD7B0 /* LoginUserNavigator.swift in Sources */,
+				C9F4C7FD207B228500FFD7B0 /* AuthenticatedUserGetRequest.swift in Sources */,
 				C93E4015207A81E1002D306B /* AuthViewNavigator.swift in Sources */,
 				C93E4017207A8397002D306B /* LoginController.swift in Sources */,
 				C9F4C7F9207B188500FFD7B0 /* Navigator.swift in Sources */,
+				C9F4C7FF207B233500FFD7B0 /* LoginUserViewModel.swift in Sources */,
 				C93E401A207A841B002D306B /* LoginNavigator.swift in Sources */,
 				C9004A392077553E009155DD /* ArticleViewController.swift in Sources */,
 				C94656D5207A39E400300B1C /* AuthController.swift in Sources */,
 				C9004A0720766EA8009155DD /* AppDelegate.swift in Sources */,
 				C9004A35207748A1009155DD /* Qiita.swift in Sources */,
 				C93E400D207A5C31002D306B /* Config.swift in Sources */,
+				C9F4C804207B253E00FFD7B0 /* HomeViewController.swift in Sources */,
 				C9004A3B20775B18009155DD /* Extension+UIColor.swift in Sources */,
 				C94656D7207A427F00300B1C /* AuthViewModel.swift in Sources */,
 				C93E400F207A5C8D002D306B /* AccessToken.swift in Sources */,

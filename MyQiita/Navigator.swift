@@ -8,6 +8,7 @@
 
 import UIKit
 
+//イニシャライザと一部メソッド, navigatableでnavitagte to 可能
 class Navigator {
     var controller: UIViewController
     init(controller: UIViewController) {
@@ -45,4 +46,3 @@ extension Navigatable where Self: Navigator {
         }
     }
 }
-

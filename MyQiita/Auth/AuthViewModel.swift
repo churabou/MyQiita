@@ -38,12 +38,16 @@ class AuthViewModel: NSObject {
         QiitaSession.send(request) { (response) in
             switch response {
             case .success(let token):
-                Config.accessToken = token
+                self.addUserDefaults(token: token)
                 self.navigator?.dismiss(to: .login)
             case .failure(let message):
                 print("失敗した。\(message)")
             }
         }
+    }
+    
+    func addUserDefaults(token: AccessToken) {
+        UserDefaults.standard.set(token.token, forKey: "access_toeken_key")
     }
 }
 
