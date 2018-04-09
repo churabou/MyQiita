@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class ArticleListController: UIViewController {
 
     private var tableView = UITableView()
-    fileprivate var articles: [Article] = []
     fileprivate var viewModel = ArticleListViewModel()
+    private let bag: DisposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,20 @@ class ArticleListController: UIViewController {
             tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "cell")
             view.addSubview(tableView)
         }
-        
+
+        configureObserver()
         viewModel.fetchArticle()
+    }
+    
+    func configureObserver() {
+        
+        viewModel.articles.asObservable().subscribe(onNext: { _ in
+            self.tableView.reloadData()
+        }).disposed(by: bag)
+        
+        tableView.rx.reachedBottom.subscribe(onNext: { _ in
+            self.viewModel.fetchMoreArticle()
+        }).disposed(by: bag)
     }
 }
 
@@ -38,7 +51,7 @@ extension ArticleListController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let c = ArticleViewController()
-        c.body = articles[indexPath.row].body
+        c.body = viewModel.articles.value[indexPath.row].body
         navigationController?.pushViewController(c, animated: true)
     }
 }
@@ -50,12 +63,14 @@ extension ArticleListController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(article: articles[indexPath.row])
+        
+        let article = viewModel.articles.value[indexPath.row]
+        cell.configure(article: article)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return  viewModel.articles.value.count
     }
 }
 

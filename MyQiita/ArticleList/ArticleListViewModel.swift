@@ -6,24 +6,39 @@
 //  Copyright © 2018年 ちゅーたつ. All rights reserved.
 //
 
-import Foundation
-
+import RxSwift
 
 class ArticleListViewModel {
     
     var isLoading = false
-    var articles: [Article] = []
+    var articles: Variable<[Article]> = Variable([])
+    
+    private let perPage = 20
+    private var page = 1
     
     func fetchArticle() {
 
-        QiitaSession.send(ArticlePostRequest(), completion: { response in
+        let request = ArticlePostRequest(page: page, perPage: perPage)
+        QiitaSession.send(request, completion: { response in
             switch response {
             case .success(let articles):
                 print(articles)
-                self.articles = articles
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
+                self.articles.value = articles
+            case .failure(let message):
+                print(message)
+            }
+        })
+    }
+    
+    
+    func fetchMoreArticle() {
+        
+        page += 1
+        let request = ArticlePostRequest(page: page, perPage: perPage)
+        QiitaSession.send(request, completion: { response in
+            switch response {
+            case .success(let articles):
+                self.articles.value += articles
             case .failure(let message):
                 print(message)
             }

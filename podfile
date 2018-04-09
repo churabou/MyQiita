@@ -9,5 +9,7 @@ target 'MyQiita' do
 
   pod 'SnapKit'
   pod 'Kingfisher'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end
 
