@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		00FCCF571F2A1DFFFFE38C6B /* Pods_MyQiita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444F3EA9817F5BAE26C6D8C0 /* Pods_MyQiita.framework */; };
 		C9004A0720766EA8009155DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A0620766EA8009155DD /* AppDelegate.swift */; };
-		C9004A0920766EA8009155DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A0820766EA8009155DD /* ViewController.swift */; };
+		C9004A0920766EA8009155DD /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A0820766EA8009155DD /* ArticleListController.swift */; };
 		C9004A0E20766EA8009155DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9004A0D20766EA8009155DD /* Assets.xcassets */; };
 		C9004A1120766EA8009155DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9004A0F20766EA8009155DD /* LaunchScreen.storyboard */; };
 		C9004A1C20766EA8009155DD /* MyQiitaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9004A1B20766EA8009155DD /* MyQiitaTests.swift */; };
@@ -34,6 +34,7 @@
 		C9F4C7FF207B233500FFD7B0 /* LoginUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C7FE207B233500FFD7B0 /* LoginUserViewModel.swift */; };
 		C9F4C802207B23EE00FFD7B0 /* LoginUserNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C801207B23EE00FFD7B0 /* LoginUserNavigator.swift */; };
 		C9F4C804207B253E00FFD7B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */; };
+		C9F4C807207B2D7600FFD7B0 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C806207B2D7600FFD7B0 /* ArticleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,7 @@
 		444F3EA9817F5BAE26C6D8C0 /* Pods_MyQiita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyQiita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9004A0320766EA8009155DD /* MyQiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyQiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9004A0620766EA8009155DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C9004A0820766EA8009155DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9004A0820766EA8009155DD /* ArticleListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
 		C9004A0D20766EA8009155DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9004A1020766EA8009155DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9004A1220766EA8009155DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		C9F4C7FE207B233500FFD7B0 /* LoginUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserViewModel.swift; sourceTree = "<group>"; };
 		C9F4C801207B23EE00FFD7B0 /* LoginUserNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserNavigator.swift; sourceTree = "<group>"; };
 		C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C9F4C806207B2D7600FFD7B0 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		DE2D7CC620E47FCD3B0E2C4C /* Pods-MyQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyQiita.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyQiita/Pods-MyQiita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,8 +168,7 @@
 				C94656D8207A42A100300B1C /* Auth */,
 				C9F4C800207B234600FFD7B0 /* AuthedUser */,
 				C9F4C805207B254300FFD7B0 /* Home */,
-				C9004A382077553E009155DD /* ArticleViewController.swift */,
-				C9004A0820766EA8009155DD /* ViewController.swift */,
+				C9F4C808207B2D7D00FFD7B0 /* ArticleList */,
 				C94656462079F5DB00300B1C /* hello.html */,
 				C9004A3E2078B37B009155DD /* Api */,
 				C9004A3620774E6F009155DD /* ArticleTableViewCell.swift */,
@@ -245,6 +246,16 @@
 				C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C9F4C808207B2D7D00FFD7B0 /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				C9004A382077553E009155DD /* ArticleViewController.swift */,
+				C9004A0820766EA8009155DD /* ArticleListController.swift */,
+				C9F4C806207B2D7600FFD7B0 /* ArticleListViewModel.swift */,
+			);
+			path = ArticleList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,7 +454,7 @@
 			files = (
 				C9004A3D2078B374009155DD /* Article.swift in Sources */,
 				C9004A3720774E6F009155DD /* ArticleTableViewCell.swift in Sources */,
-				C9004A0920766EA8009155DD /* ViewController.swift in Sources */,
+				C9004A0920766EA8009155DD /* ArticleListController.swift in Sources */,
 				C9F4C802207B23EE00FFD7B0 /* LoginUserNavigator.swift in Sources */,
 				C9F4C7FD207B228500FFD7B0 /* AuthenticatedUserGetRequest.swift in Sources */,
 				C93E4015207A81E1002D306B /* AuthViewNavigator.swift in Sources */,
@@ -454,6 +465,7 @@
 				C9004A392077553E009155DD /* ArticleViewController.swift in Sources */,
 				C94656D5207A39E400300B1C /* AuthController.swift in Sources */,
 				C9004A0720766EA8009155DD /* AppDelegate.swift in Sources */,
+				C9F4C807207B2D7600FFD7B0 /* ArticleListViewModel.swift in Sources */,
 				C9004A35207748A1009155DD /* Qiita.swift in Sources */,
 				C93E400D207A5C31002D306B /* Config.swift in Sources */,
 				C9F4C804207B253E00FFD7B0 /* HomeViewController.swift in Sources */,

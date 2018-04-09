@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = .pink
-        let a = ViewController()
+        let a = ArticleListController()
         self.addChildViewController(a)
         view.addSubview(a.view)
     }

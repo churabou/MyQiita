@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ArticleListController: UIViewController {
 
     private var tableView = UITableView()
     fileprivate var articles: [Article] = []
+    fileprivate var viewModel = ArticleListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "記事一覧"
         setUpTableView: do {
             tableView.frame = view.frame
@@ -24,23 +25,12 @@ class ViewController: UIViewController {
             tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "cell")
             view.addSubview(tableView)
         }
-
-        QiitaSession.send(ArticlePostRequest(), completion: { response in
-            switch response {
-            case .success(let articles):
-                print(articles)
-                self.articles = articles
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            case .failure(let message):
-                print(message)
-            }
-        })
+        
+        viewModel.fetchArticle()
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension ArticleListController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ArticleTableViewCell.height
@@ -53,7 +43,7 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ArticleListController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
