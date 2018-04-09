@@ -1,5 +1,5 @@
 //
-//  LoginNavigator.swift
+//  AuthViewNavigator.swift
 //  MyQiita
 //
 //  Created by ちゅーたつ on 2018/04/09.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewNavigator {
+class AuthViewNavigator {
     
     var viewController = UIViewController()
     

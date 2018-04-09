@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let c = false ? ViewController() : AuthController()
+        let c = false ? ViewController() : LoginController()
         window?.rootViewController = UINavigationController(rootViewController: c)
         window?.makeKeyAndVisible()
         

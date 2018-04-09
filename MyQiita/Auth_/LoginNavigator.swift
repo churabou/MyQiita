@@ -1,5 +1,5 @@
 //
-//  AuthNavigator.swift
+//  LoginNavigator.swift
 //  MyQiita
 //
 //  Created by ちゅーたつ on 2018/04/09.
@@ -40,15 +40,15 @@ extension Navigatable where Self: Navigator {
 }
 
 
-class AuthNavigator: Navigator, Navigatable {
+class LoginNavigator: Navigator, Navigatable {
 
     typealias DirectionType = Direction
 
     enum Direction {
-        case login
+        case auth
     }
     
     func controller(_ to: DirectionType) -> UIViewController {
-         return LoginViewController()
+         return AuthController()
     }
 }

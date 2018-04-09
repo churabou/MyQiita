@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LoginViewModel: NSObject {
+class AuthViewModel: NSObject {
     
-    private var navigator: LoginViewNavigator?
+    private var navigator: AuthViewNavigator?
     
-    convenience init(_ navigator: LoginViewNavigator) {
+    convenience init(_ navigator: AuthViewNavigator) {
         self.init()
         self.navigator = navigator
     }
@@ -47,7 +47,7 @@ class LoginViewModel: NSObject {
     }
 }
 
-extension LoginViewModel: UIWebViewDelegate {
+extension AuthViewModel: UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         

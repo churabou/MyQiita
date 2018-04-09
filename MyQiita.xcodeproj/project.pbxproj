@@ -22,12 +22,13 @@
 		C93E400D207A5C31002D306B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E400C207A5C31002D306B /* Config.swift */; };
 		C93E400F207A5C8D002D306B /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E400E207A5C8D002D306B /* AccessToken.swift */; };
 		C93E4011207A800F002D306B /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C93E4010207A800F002D306B /* LaunchScreen.png */; };
-		C93E4015207A81E1002D306B /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4014207A81E1002D306B /* LoginNavigator.swift */; };
-		C93E4017207A8397002D306B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4016207A8397002D306B /* AuthController.swift */; };
-		C93E401A207A841B002D306B /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4019207A841B002D306B /* AuthNavigator.swift */; };
+		C93E4015207A81E1002D306B /* AuthViewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4014207A81E1002D306B /* AuthViewNavigator.swift */; };
+		C93E4017207A8397002D306B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4016207A8397002D306B /* LoginController.swift */; };
+		C93E401A207A841B002D306B /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4019207A841B002D306B /* LoginNavigator.swift */; };
 		C94656472079F5DB00300B1C /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = C94656462079F5DB00300B1C /* hello.html */; };
-		C94656D5207A39E400300B1C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D4207A39E400300B1C /* loginViewController.swift */; };
-		C94656D7207A427F00300B1C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D6207A427F00300B1C /* LoginViewModel.swift */; };
+		C94656D5207A39E400300B1C /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D4207A39E400300B1C /* AuthController.swift */; };
+		C94656D7207A427F00300B1C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94656D6207A427F00300B1C /* AuthViewModel.swift */; };
+		C9F4C7F7207B154000FFD7B0 /* LoginUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C7F6207B154000FFD7B0 /* LoginUserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,12 +71,13 @@
 		C93E400C207A5C31002D306B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C93E400E207A5C8D002D306B /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		C93E4010207A800F002D306B /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = SOURCE_ROOT; };
-		C93E4014207A81E1002D306B /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
-		C93E4016207A8397002D306B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
-		C93E4019207A841B002D306B /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
+		C93E4014207A81E1002D306B /* AuthViewNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewNavigator.swift; sourceTree = "<group>"; };
+		C93E4016207A8397002D306B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C93E4019207A841B002D306B /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		C94656462079F5DB00300B1C /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hello.html; sourceTree = SOURCE_ROOT; };
-		C94656D4207A39E400300B1C /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
-		C94656D6207A427F00300B1C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C94656D4207A39E400300B1C /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		C94656D6207A427F00300B1C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C9F4C7F6207B154000FFD7B0 /* LoginUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserController.swift; sourceTree = "<group>"; };
 		DE2D7CC620E47FCD3B0E2C4C /* Pods-MyQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyQiita.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyQiita/Pods-MyQiita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,9 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				C9004A0620766EA8009155DD /* AppDelegate.swift */,
-				C93E4018207A839D002D306B /* Auth */,
 				C93E400C207A5C31002D306B /* Config.swift */,
-				C94656D8207A42A100300B1C /* Login */,
+				C93E4018207A839D002D306B /* Login */,
+				C94656D8207A42A100300B1C /* Auth */,
 				C9004A0820766EA8009155DD /* ViewController.swift */,
 				C9004A382077553E009155DD /* ArticleViewController.swift */,
 				C94656462079F5DB00300B1C /* hello.html */,
@@ -193,23 +195,25 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
-		C93E4018207A839D002D306B /* Auth */ = {
+		C93E4018207A839D002D306B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				C93E4016207A8397002D306B /* AuthController.swift */,
-				C93E4019207A841B002D306B /* AuthNavigator.swift */,
+				C93E4016207A8397002D306B /* LoginController.swift */,
+				C93E4019207A841B002D306B /* LoginNavigator.swift */,
+				C9F4C7F6207B154000FFD7B0 /* LoginUserController.swift */,
 			);
-			path = Auth;
+			name = Login;
+			path = Auth_;
 			sourceTree = "<group>";
 		};
-		C94656D8207A42A100300B1C /* Login */ = {
+		C94656D8207A42A100300B1C /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				C94656D6207A427F00300B1C /* LoginViewModel.swift */,
-				C94656D4207A39E400300B1C /* loginViewController.swift */,
-				C93E4014207A81E1002D306B /* LoginNavigator.swift */,
+				C94656D6207A427F00300B1C /* AuthViewModel.swift */,
+				C94656D4207A39E400300B1C /* AuthController.swift */,
+				C93E4014207A81E1002D306B /* AuthViewNavigator.swift */,
 			);
-			path = Login;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,17 +413,18 @@
 				C9004A3D2078B374009155DD /* Article.swift in Sources */,
 				C9004A3720774E6F009155DD /* ArticleTableViewCell.swift in Sources */,
 				C9004A0920766EA8009155DD /* ViewController.swift in Sources */,
-				C93E4015207A81E1002D306B /* LoginNavigator.swift in Sources */,
-				C93E4017207A8397002D306B /* AuthController.swift in Sources */,
-				C93E401A207A841B002D306B /* AuthNavigator.swift in Sources */,
+				C93E4015207A81E1002D306B /* AuthViewNavigator.swift in Sources */,
+				C93E4017207A8397002D306B /* LoginController.swift in Sources */,
+				C93E401A207A841B002D306B /* LoginNavigator.swift in Sources */,
 				C9004A392077553E009155DD /* ArticleViewController.swift in Sources */,
-				C94656D5207A39E400300B1C /* loginViewController.swift in Sources */,
+				C94656D5207A39E400300B1C /* AuthController.swift in Sources */,
 				C9004A0720766EA8009155DD /* AppDelegate.swift in Sources */,
 				C9004A35207748A1009155DD /* Qiita.swift in Sources */,
 				C93E400D207A5C31002D306B /* Config.swift in Sources */,
 				C9004A3B20775B18009155DD /* Extension+UIColor.swift in Sources */,
-				C94656D7207A427F00300B1C /* LoginViewModel.swift in Sources */,
+				C94656D7207A427F00300B1C /* AuthViewModel.swift in Sources */,
 				C93E400F207A5C8D002D306B /* AccessToken.swift in Sources */,
+				C9F4C7F7207B154000FFD7B0 /* LoginUserController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
