@@ -24,21 +24,20 @@ class HomeViewController: UIViewController {
         ("ストック", UIViewController())
     ]
     
-    fileprivate var wrapperView = UIView()
     fileprivate var tabButtons: [UIButton] = []
     fileprivate var childeViews: [UIView] = []
 
     fileprivate var tabView = UIScrollView()
     fileprivate lazy var containerView: UIScrollView = {
         let v = UIScrollView()
-        v.backgroundColor = .green
+        v.backgroundColor = .clear
         v.isPagingEnabled = true
         v.delegate = self
         return v
     }()
     fileprivate lazy var tabBar: UIView = {
         let v = UIView()
-        v.backgroundColor = .orange
+        v.backgroundColor = .pink
         return v
     }()
     
@@ -132,15 +131,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         
         navigationController?.navigationBar.isTranslucent = false
-        view.backgroundColor = .pink
-        view.addSubview(wrapperView)
-        wrapperView.addSubview(tabView)
-        wrapperView.addSubview(tabBar)
-        wrapperView.addSubview(containerView)
+        view.addSubview(tabView)
+        view.addSubview(tabBar)
+        view.addSubview(containerView)
+
         
-        wrapperView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
         initializeConstraints()
         setItem()
         updateConstraints()
@@ -148,13 +143,16 @@ class HomeViewController: UIViewController {
     
     
     func scroll(to: Int) {
+        
         let x = CGFloat(to) * containerView.bounds.width
         UIView.animate(withDuration: 0.3) {
+            
             self.containerView.contentOffset.x = x
         }
     }
     
     fileprivate var currentIndex: Int {
+        
         return Int(containerView.contentOffset.x / containerView.bounds.width)
     }
 }
