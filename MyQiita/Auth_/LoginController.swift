@@ -41,4 +41,8 @@ class LoginController: UIViewController {
             make.bottom.equalTo(-60)
         }
     }
+    
+    func loginSuccess() {
+        navigator?.navigate(to: .loginUser)
+    }
 }

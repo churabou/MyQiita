@@ -8,28 +8,19 @@
 
 import UIKit
 
-class AuthViewNavigator {
-    
-    var viewController = UIViewController()
-    
-    convenience init(_ vc: UIViewController) {
-        self.init()
-        self.viewController = vc
-    }
-    
+class AuthViewNavigator: Navigator {
+
     enum Direction {
-        case home, login
+        case login
     }
     
-    func navigate(_ to: Direction) {
+    func dismiss(to: Direction) {
         
-        switch to {
-        case .home:
-            let c = ViewController()
-            let n = UINavigationController(rootViewController: c)
-            viewController.present(n, animated: true, completion: nil)
-        default:
-            return
+        if let n = controller.presentingViewController as? UINavigationController,
+            let c = n.viewControllers.first as? LoginController {
+            controller.dismiss(animated: true, completion: {
+                c.loginSuccess()
+            })
         }
     }
 }

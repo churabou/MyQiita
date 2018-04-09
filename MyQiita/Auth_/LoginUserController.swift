@@ -6,4 +6,14 @@
 //  Copyright © 2018年 ちゅーたつ. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+class LoginUserController: UIViewController {
+
+    
+    override func viewDidLoad() {
+        
+        view.backgroundColor = .red
+    }
+}

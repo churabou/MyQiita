@@ -39,7 +39,7 @@ class AuthViewModel: NSObject {
             switch response {
             case .success(let token):
                 Config.accessToken = token
-                self.navigator?.navigate(.home)
+                self.navigator?.dismiss(to: .login)
             case .failure(let message):
                 print("失敗した。\(message)")
             }

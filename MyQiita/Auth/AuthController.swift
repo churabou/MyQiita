@@ -23,7 +23,7 @@ class AuthController: UIViewController {
             make.edges.equalToSuperview()
         }
 
-        navigator = AuthViewNavigator(self)
+        navigator = AuthViewNavigator(controller: self)
         viewModel = AuthViewModel(navigator)
         webView.delegate = viewModel
     }

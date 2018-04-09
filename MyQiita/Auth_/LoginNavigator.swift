@@ -8,47 +8,21 @@
 
 import UIKit
 
-class Navigator {
-    var controller: UIViewController
-    init(controller: UIViewController) {
-        self.controller = controller
-    }
-    
-    enum Style {
-        case modal, push, pop
-    }
-}
-
-protocol Navigatable {
-    associatedtype DirectionType
-    func controller(_ to: DirectionType) -> UIViewController
-}
-
-extension Navigatable where Self: Navigator {
-
-    func navigate(to: DirectionType, style: Style = .push) {
-        let c = controller(to)
-        switch style {
-        case .modal:
-            controller.present(c, animated: true, completion: nil)
-        case .push:
-            controller.navigationController?.pushViewController(c, animated: true)
-        case .pop:
-            controller.navigationController?.popViewController(animated: true)
-        }
-    }
-}
-
-
 class LoginNavigator: Navigator, Navigatable {
 
     typealias DirectionType = Direction
 
     enum Direction {
-        case auth
+        case auth, loginUser
     }
     
     func controller(_ to: DirectionType) -> UIViewController {
-         return AuthController()
+
+        switch to {
+        case .auth:
+            return AuthController()
+        case .loginUser:
+            return LoginUserController()
+        }
     }
 }
