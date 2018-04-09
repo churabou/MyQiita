@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         ("ストック", UIViewController())
     ]
     
+    fileprivate var wrapperView = UIView()
     fileprivate var tabButtons: [UIButton] = []
     fileprivate var childeViews: [UIView] = []
 
@@ -40,13 +41,6 @@ class HomeViewController: UIViewController {
         v.backgroundColor = .orange
         return v
     }()
-
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-    }
     
     @objc fileprivate func actionButton(_ sender: UIButton) {
         scroll(to: sender.tag)
@@ -56,7 +50,7 @@ class HomeViewController: UIViewController {
         
         tabView.snp.makeConstraints { (make) in
             make.top.width.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(30)
         }
         
         tabBar.snp.makeConstraints { (make) in
@@ -136,11 +130,17 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = .pink
-        view.addSubview(tabView)
-        view.addSubview(tabBar)
-        view.addSubview(containerView)
         
+        navigationController?.navigationBar.isTranslucent = false
+        view.backgroundColor = .pink
+        view.addSubview(wrapperView)
+        wrapperView.addSubview(tabView)
+        wrapperView.addSubview(tabBar)
+        wrapperView.addSubview(containerView)
+        
+        wrapperView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         initializeConstraints()
         setItem()
         updateConstraints()
