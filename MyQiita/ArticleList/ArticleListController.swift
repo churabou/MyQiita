@@ -41,6 +41,11 @@ class ArticleListController: UIViewController {
             self.viewModel.fetchMoreArticle()
         }).disposed(by: bag)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print("これは呼ばれrない")
+    }
 }
 
 extension ArticleListController: UITableViewDelegate {

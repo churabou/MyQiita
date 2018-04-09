@@ -27,12 +27,28 @@ class HomeViewController: UIViewController {
     fileprivate var tabView = UIScrollView()
     fileprivate var containerView = UIScrollView()
     fileprivate var tabButtons: [UIButton] = []
+
+    fileprivate var currentIndex: Int {
+        return Int(containerView.contentOffset.x / containerView.bounds.width)
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
+    
+    @objc fileprivate func actionButton(_ sender: UIButton) {
+        scroll(to: sender.tag)
+    }
+    
+    func scroll(to: Int) {
+        let x = CGFloat(to) * containerView.bounds.width
+        UIView.animate(withDuration: 0.3) {
+            self.containerView.contentOffset.x = x
+        }
+    }
+    
     func initializeConstraints() {
         
         tabView.snp.makeConstraints { (make) in
@@ -55,14 +71,16 @@ class HomeViewController: UIViewController {
             let b = UIButton()
             b.setTitle(item.title, for: .normal)
             b.setTitleColor(.black, for: .normal)
+            b.tag = index
+            b.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
             tabButtons.append(b)
             tabView.addSubview(b)
             
-            let v = UIView()
-            v.backgroundColor = index == 1 ? .red : .blue
+
+            let v = item.controller.view!
+            v.setAutolayout()
             childeViews.append(v)
             containerView.addSubview(v)
-            v.setAutolayout()
         }
 
         tabButtons.enumerated().forEach { index, button in
@@ -108,12 +126,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = .pink
 
-        tabView.setAutolayout()
+//        tabView.setAutolayout()
         tabView.backgroundColor = .red
         view.addSubview(tabView)
         
-        containerView.setAutolayout()
+//        containerView.setAutolayout()
         containerView.backgroundColor = .green
+        containerView.isPagingEnabled = true
         view.addSubview(containerView)
         initializeConstraints()
         setItem()
