@@ -23,15 +23,25 @@ class HomeViewController: UIViewController {
         ("フォロー", UIViewController()),
         ("ストック", UIViewController())
     ]
+    
+    fileprivate var tabButtons: [UIButton] = []
+    fileprivate var childeViews: [UIView] = []
 
     fileprivate var tabView = UIScrollView()
-    fileprivate var containerView = UIScrollView()
-    fileprivate var tabButtons: [UIButton] = []
+    fileprivate lazy var containerView: UIScrollView = {
+        let v = UIScrollView()
+        v.backgroundColor = .green
+        v.isPagingEnabled = true
+        v.delegate = self
+        return v
+    }()
+    fileprivate lazy var tabBar: UIView = {
+        let v = UIView()
+        v.backgroundColor = .orange
+        return v
+    }()
 
-    fileprivate var currentIndex: Int {
-        return Int(containerView.contentOffset.x / containerView.bounds.width)
-    }
-    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,13 +52,6 @@ class HomeViewController: UIViewController {
         scroll(to: sender.tag)
     }
     
-    func scroll(to: Int) {
-        let x = CGFloat(to) * containerView.bounds.width
-        UIView.animate(withDuration: 0.3) {
-            self.containerView.contentOffset.x = x
-        }
-    }
-    
     func initializeConstraints() {
         
         tabView.snp.makeConstraints { (make) in
@@ -56,14 +59,21 @@ class HomeViewController: UIViewController {
             make.height.equalTo(50)
         }
         
+        tabBar.snp.makeConstraints { (make) in
+            make.top.equalTo(tabView.snp.bottom)
+            make.left.equalToSuperview()
+            make.width.equalToSuperview().dividedBy(3)
+            make.height.equalTo(5)
+        }
+        
         containerView.snp.makeConstraints { (make) in
-            make.top.equalTo(tabView.snp.bottom).offset(5)
+            make.top.equalTo(tabBar.snp.bottom)
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }
     
-    fileprivate var childeViews: [UIView] = []
+
     
     func setItem() {
 
@@ -82,61 +92,78 @@ class HomeViewController: UIViewController {
             childeViews.append(v)
             containerView.addSubview(v)
         }
+    }
+    
+    func updateConstraints() {
 
         tabButtons.enumerated().forEach { index, button in
-
+            
             button.snp.makeConstraints { (make) in
                 make.top.bottom.equalToSuperview()
                 make.width.equalToSuperview().dividedBy(3)
-
+                
                 if button == tabButtons.first {
                     make.left.equalToSuperview()
                 } else {
                     let pre = tabButtons[index-1]
                     make.left.equalTo(pre.snp.right)
                 }
-
+                
                 if button == tabButtons.last {
                     make.right.equalToSuperview()
                 }
             }
         }
         
-        var preView: UIView?
-        for view in childeViews {
-            view.snp.makeConstraints({ (make) in
+        childeViews.enumerated().forEach { index, view in
+            view.snp.makeConstraints { (make) in
                 make.top.equalToSuperview()
                 make.width.height.equalToSuperview()
                 
-                if let pre = preView {
-                    make.left.equalTo(pre.snp.right)
-                } else {
+                if view == childeViews.first {
                     // 最初のViewはUIScrollViewの左側に設定する
                     make.left.equalToSuperview()
+                } else {
+                    let pre = childeViews[index-1]
+                    make.left.equalTo(pre.snp.right)
                 }
                 // 最後のViewはUIScrollViewの右側に設定する
                 if view == childeViews.last {
                     make.right.equalToSuperview()
                 }
-                preView = view
-            })
+            }
         }
     }
     
     override func viewDidLoad() {
         view.backgroundColor = .pink
-
-//        tabView.setAutolayout()
-        tabView.backgroundColor = .red
         view.addSubview(tabView)
-        
-//        containerView.setAutolayout()
-        containerView.backgroundColor = .green
-        containerView.isPagingEnabled = true
+        view.addSubview(tabBar)
         view.addSubview(containerView)
+        
         initializeConstraints()
         setItem()
+        updateConstraints()
     }
     
+    
+    func scroll(to: Int) {
+        let x = CGFloat(to) * containerView.bounds.width
+        UIView.animate(withDuration: 0.3) {
+            self.containerView.contentOffset.x = x
+        }
+    }
+    
+    fileprivate var currentIndex: Int {
+        return Int(containerView.contentOffset.x / containerView.bounds.width)
+    }
+}
 
+
+extension HomeViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        tabBar.frame.origin.x = scrollView.contentOffset.x / CGFloat(tabItems.count)
+    }
 }
