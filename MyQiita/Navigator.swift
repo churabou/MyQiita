@@ -16,7 +16,7 @@ class Navigator {
     }
     
     enum Style {
-        case modal, push, pop
+        case modal, push, pop, dismiss
     }
 }
 
@@ -34,15 +34,17 @@ protocol Navigatable {
 
 extension Navigatable where Self: Navigator {
     
-    func navigate(to: DirectionType, style: Style = .push) {
+    func navigate(to: DirectionType, style: Style = .push, animated: Bool = true) {
         let c = controller(to)
         switch style {
         case .modal:
-            controller.present(c, animated: true, completion: nil)
+            controller.present(c, animated: animated, completion: nil)
         case .push:
-            controller.navigationController?.pushViewController(c, animated: true)
+            controller.navigationController?.pushViewController(c, animated: animated)
         case .pop:
-            controller.navigationController?.popViewController(animated: true)
+            controller.navigationController?.popViewController(animated: animated)
+        case .dismiss:
+            controller.dismiss(animated: animated, completion: nil)
         }
     }
 }

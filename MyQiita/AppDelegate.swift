@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let isLogin = !Config.token.isEmpty
-        let c = isLogin ? HomeViewController() : LoginController()
-        window?.rootViewController = UINavigationController(rootViewController: c)
+        let c = isLogin ? HomeViewController() : UINavigationController(rootViewController: LoginController())
+        window?.rootViewController =  c
         window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().backgroundColor = .pink

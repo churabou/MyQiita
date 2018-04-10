@@ -26,7 +26,7 @@ class LoginUserController: UIViewController {
     }()
     
     @objc private func actionStart() {
-        navigator?.navigate(to: .home)
+        navigator?.navigate(to: .home, style: .modal)
     }
     
     override func viewDidLoad() {

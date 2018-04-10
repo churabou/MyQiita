@@ -36,6 +36,9 @@
 		C9F4C804207B253E00FFD7B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */; };
 		C9F4C807207B2D7600FFD7B0 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C806207B2D7600FFD7B0 /* ArticleListViewModel.swift */; };
 		C9F4C80A207B34AB00FFD7B0 /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C809207B34AB00FFD7B0 /* TableView+Extension.swift */; };
+		C9F4C80C207C37E600FFD7B0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C80B207C37E600FFD7B0 /* TabViewController.swift */; };
+		C9F4C80E207C394E00FFD7B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C80D207C394E00FFD7B0 /* ProfileViewController.swift */; };
+		C9F4C811207C3AB000FFD7B0 /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C810207C3AB000FFD7B0 /* ProfileNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,9 @@
 		C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9F4C806207B2D7600FFD7B0 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		C9F4C809207B34AB00FFD7B0 /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
+		C9F4C80B207C37E600FFD7B0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		C9F4C80D207C394E00FFD7B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C9F4C810207C3AB000FFD7B0 /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
 		DE2D7CC620E47FCD3B0E2C4C /* Pods-MyQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyQiita.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyQiita/Pods-MyQiita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +177,7 @@
 				C9F4C800207B234600FFD7B0 /* AuthedUser */,
 				C9F4C805207B254300FFD7B0 /* Home */,
 				C9F4C808207B2D7D00FFD7B0 /* ArticleList */,
+				C9F4C80F207C395A00FFD7B0 /* Profile */,
 				C94656462079F5DB00300B1C /* hello.html */,
 				C9F4C809207B34AB00FFD7B0 /* TableView+Extension.swift */,
 				C9004A3E2078B37B009155DD /* Api */,
@@ -247,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F4C803207B253E00FFD7B0 /* HomeViewController.swift */,
+				C9F4C80B207C37E600FFD7B0 /* TabViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -259,6 +267,15 @@
 				C9F4C806207B2D7600FFD7B0 /* ArticleListViewModel.swift */,
 			);
 			path = ArticleList;
+			sourceTree = "<group>";
+		};
+		C9F4C80F207C395A00FFD7B0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C9F4C810207C3AB000FFD7B0 /* ProfileNavigator.swift */,
+				C9F4C80D207C394E00FFD7B0 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9004A3D2078B374009155DD /* Article.swift in Sources */,
+				C9F4C80E207C394E00FFD7B0 /* ProfileViewController.swift in Sources */,
 				C9004A3720774E6F009155DD /* ArticleTableViewCell.swift in Sources */,
 				C9004A0920766EA8009155DD /* ArticleListController.swift in Sources */,
 				C9F4C802207B23EE00FFD7B0 /* LoginUserNavigator.swift in Sources */,
@@ -470,9 +488,11 @@
 				C9F4C7FF207B233500FFD7B0 /* LoginUserViewModel.swift in Sources */,
 				C93E401A207A841B002D306B /* LoginNavigator.swift in Sources */,
 				C9004A392077553E009155DD /* ArticleViewController.swift in Sources */,
+				C9F4C811207C3AB000FFD7B0 /* ProfileNavigator.swift in Sources */,
 				C94656D5207A39E400300B1C /* AuthController.swift in Sources */,
 				C9004A0720766EA8009155DD /* AppDelegate.swift in Sources */,
 				C9F4C807207B2D7600FFD7B0 /* ArticleListViewModel.swift in Sources */,
+				C9F4C80C207C37E600FFD7B0 /* TabViewController.swift in Sources */,
 				C9004A35207748A1009155DD /* Qiita.swift in Sources */,
 				C93E400D207A5C31002D306B /* Config.swift in Sources */,
 				C9F4C804207B253E00FFD7B0 /* HomeViewController.swift in Sources */,
