@@ -12,6 +12,7 @@ import UIKit
 class LoginUserController: UIViewController {
 
     private var navigator: LoginUserNavigator?
+    private var viewModel = LoginUserViewModel()
     
     private lazy var startButton: UIButton = {
         let b = UIButton()
@@ -40,5 +41,6 @@ class LoginUserController: UIViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(-60)
         }
+        viewModel.fetchProfile()
     }
 }

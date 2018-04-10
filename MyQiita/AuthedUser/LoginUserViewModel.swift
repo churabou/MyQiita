@@ -17,9 +17,17 @@ class LoginUserViewModel {
             switch response {
             case .success(let user):
                 print(user)
+                self.addUserdefaults(user: user)
             case .failure(let message):
                 print("失敗した。\(message)")
             }
         }
+    }
+    
+    func addUserdefaults(user: User) {
+        let data = try? JSONEncoder().encode(user)
+        UserDefaults.standard.set(data, forKey:"auto_memories_doll")
+        print(user.id)
+        print("保存した")
     }
 }

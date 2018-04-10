@@ -11,10 +11,15 @@ import RxSwift
 
 class ArticleListController: UIViewController {
 
+    convenience init(target: ArticlePostRequest.Target) {
+        self.init(nibName: nil, bundle: nil)
+        self.viewModel = ArticleListViewModel(target: target)
+    }
+    
     private var tableView = UITableView()
-    fileprivate var viewModel = ArticleListViewModel()
+    fileprivate var viewModel = ArticleListViewModel(target: .new)
     private let bag: DisposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

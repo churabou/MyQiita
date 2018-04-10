@@ -15,10 +15,15 @@ class ArticleListViewModel {
     
     private let perPage = 20
     private var page = 1
+    private var target: ArticlePostRequest.Target
+    
+    init(target: ArticlePostRequest.Target) {
+        self.target = target
+    }
     
     func fetchArticle() {
 
-        let request = ArticlePostRequest(page: page, perPage: perPage)
+        let request = ArticlePostRequest(target, page: page, perPage: perPage)
         QiitaSession.send(request, completion: { response in
             switch response {
             case .success(let articles):
@@ -34,7 +39,7 @@ class ArticleListViewModel {
     func fetchMoreArticle() {
         
         page += 1
-        let request = ArticlePostRequest(page: page, perPage: perPage)
+        let request = ArticlePostRequest(target, page: page, perPage: perPage)
         QiitaSession.send(request, completion: { response in
             switch response {
             case .success(let articles):

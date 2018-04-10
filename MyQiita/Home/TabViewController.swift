@@ -11,9 +11,9 @@ import SnapKit
 class TabViewController: UIViewController {
     
     fileprivate var tabItems: [(title: String, controller: UIViewController)] = [
-        ("新着", ArticleListController()),
-        ("フォロー", UIViewController()),
-        ("ストック", UIViewController())
+        ("新着", ArticleListController(target: .new)),
+        ("フォロー", ArticleListController(target: .userPost)),
+        ("ストック", ArticleListController(target: .userStock))
     ]
     
     fileprivate var tabButtons: [UIButton] = []

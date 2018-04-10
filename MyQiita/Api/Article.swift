@@ -27,29 +27,3 @@ struct Article: Codable {
     }
 }
 
-
-struct ArticlePostRequest: Request {
-    
-    typealias ResponseType = [Article]
-    var url = ""
-    
-    private var page: Int
-    private var perPage: Int
-    
-    init(page: Int, perPage: Int) {
-        self.page = page
-        self.perPage = perPage
-    }
-
-    func build() -> URLRequest {
-
-        var request = URLComponents(string: "https://qiita.com/api/v2/items")
-        request?.queryItems = [
-            URLQueryItem(name: "page", value: "\(page)"),
-            URLQueryItem(name: "per_page", value: "\(perPage)")
-        ]
-        
-        
-        return URLRequest(url: (request?.url)!)
-    }
-}

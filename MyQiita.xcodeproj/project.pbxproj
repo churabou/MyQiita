@@ -39,6 +39,7 @@
 		C9F4C80C207C37E600FFD7B0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C80B207C37E600FFD7B0 /* TabViewController.swift */; };
 		C9F4C80E207C394E00FFD7B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C80D207C394E00FFD7B0 /* ProfileViewController.swift */; };
 		C9F4C811207C3AB000FFD7B0 /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C810207C3AB000FFD7B0 /* ProfileNavigator.swift */; };
+		C9F4C814207CE3EF00FFD7B0 /* ArticlePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C813207CE3EF00FFD7B0 /* ArticlePostRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		C9F4C80B207C37E600FFD7B0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		C9F4C80D207C394E00FFD7B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C9F4C810207C3AB000FFD7B0 /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
+		C9F4C813207CE3EF00FFD7B0 /* ArticlePostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePostRequest.swift; sourceTree = "<group>"; };
 		DE2D7CC620E47FCD3B0E2C4C /* Pods-MyQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyQiita.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyQiita/Pods-MyQiita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,8 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				C9004A34207748A1009155DD /* Qiita.swift */,
-				C93E400E207A5C8D002D306B /* AccessToken.swift */,
+				C9F4C812207CE3D600FFD7B0 /* Entity */,
 				C9004A3C2078B374009155DD /* Article.swift */,
+				C9F4C813207CE3EF00FFD7B0 /* ArticlePostRequest.swift */,
 				C9F4C7FC207B228400FFD7B0 /* AuthenticatedUserGetRequest.swift */,
 			);
 			path = Api;
@@ -276,6 +279,14 @@
 				C9F4C80D207C394E00FFD7B0 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		C9F4C812207CE3D600FFD7B0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C93E400E207A5C8D002D306B /* AccessToken.swift */,
+			);
+			name = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +505,7 @@
 				C9F4C807207B2D7600FFD7B0 /* ArticleListViewModel.swift in Sources */,
 				C9F4C80C207C37E600FFD7B0 /* TabViewController.swift in Sources */,
 				C9004A35207748A1009155DD /* Qiita.swift in Sources */,
+				C9F4C814207CE3EF00FFD7B0 /* ArticlePostRequest.swift in Sources */,
 				C93E400D207A5C31002D306B /* Config.swift in Sources */,
 				C9F4C804207B253E00FFD7B0 /* HomeViewController.swift in Sources */,
 				C9004A3B20775B18009155DD /* Extension+UIColor.swift in Sources */,
