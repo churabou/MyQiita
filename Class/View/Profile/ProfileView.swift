@@ -19,6 +19,7 @@ class ProfileView: BaseView {
     
     private lazy var logoutButton: UIButton = {
         let b = UIButton()
+        b.setAutolayout()
         b.backgroundColor = .pink
         b.setTitle("ログアウト", for: .normal)
         b.setTitleColor(.white, for: .normal)
@@ -29,8 +30,16 @@ class ProfileView: BaseView {
         return b
     }()
     
+    private lazy var profileWrapperView: UIView = {
+        let v = UIView()
+        v.setAutolayout()
+        v.backgroundColor = .pink
+        return v
+    }()
+    
     private lazy var iconView: UIImageView = {
         let v = UIImageView()
+        v.setAutolayout()
         v.layer.cornerRadius = 40
         v.clipsToBounds = true
         return v
@@ -38,6 +47,7 @@ class ProfileView: BaseView {
     
     private lazy var nameLabel: UILabel = {
         let v = UILabel()
+        v.setAutolayout()
         v.font = UIFont.systemFont(ofSize: 18)
         v.textColor = .gray
         return v
@@ -45,6 +55,7 @@ class ProfileView: BaseView {
     
     private lazy var intoroLabel: UILabel = {
         let v = UILabel()
+        v.setAutolayout()
         v.font = UIFont.systemFont(ofSize: 16)
         v.textColor = .gray
         v.numberOfLines = 0
@@ -60,9 +71,10 @@ class ProfileView: BaseView {
 
         backgroundColor = .white
         addSubview(logoutButton)
-        addSubview(iconView)
-        addSubview(nameLabel)
-        addSubview(intoroLabel)
+        addSubview(profileWrapperView)
+        profileWrapperView.addSubview(iconView)
+        profileWrapperView.addSubview(nameLabel)
+        profileWrapperView.addSubview(intoroLabel)
     }
     
     
@@ -76,10 +88,15 @@ class ProfileView: BaseView {
             make.height.equalTo(30)
         }
         
+        profileWrapperView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
+            make.top.equalTo(logoutButton.snp.bottom).offset(10)
+            make.height.equalTo(250)
+        }
         
         iconView.snp.makeConstraints { (make) in
             make.size.equalTo(80)
-            make.top.equalTo(logoutButton.snp.bottom).offset(10)
+            make.top.equalToSuperview()
             make.left.equalTo(20)
         }
         
@@ -90,9 +107,10 @@ class ProfileView: BaseView {
         }
         
         intoroLabel.snp.makeConstraints { (make) in
-            make.width.equalToSuperview()
             make.top.equalTo(iconView.snp.bottom).offset(10)
-            make.height.equalTo(200)
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.bottom.equalToSuperview()
         }
     }
     

@@ -17,6 +17,7 @@ class ArticleListController: UIViewController {
     }
     
     private var tableView = UITableView()
+    fileprivate var navigator: ArticleListNavigator?
     fileprivate var viewModel = ArticleListViewModel(target: .new)
     private let bag: DisposeBag = DisposeBag()
     
@@ -31,7 +32,8 @@ class ArticleListController: UIViewController {
             tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "cell")
             view.addSubview(tableView)
         }
-
+    
+        navigator = ArticleListNavigator(controller: self)
         configureObserver()
         viewModel.fetchArticle()
     }
@@ -60,9 +62,8 @@ extension ArticleListController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let c = ArticleViewController()
-        c.body = viewModel.articles.value[indexPath.row].body
-        navigationController?.pushViewController(c, animated: true)
+        let article = viewModel.articles.value[indexPath.row]
+        navigator?.navigate(to: .detaile(article: article))
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController {
+class ArticleDetailViewController: UIViewController {
     
     var url = ""
     var body = ""
@@ -24,7 +24,7 @@ class ArticleViewController: UIViewController {
     }
 }
 
-extension ArticleViewController: UIWebViewDelegate {
+extension ArticleDetailViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
 
