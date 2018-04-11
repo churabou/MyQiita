@@ -9,18 +9,13 @@
 import Foundation
 
 struct Config {
-    static let clientId = ""
-    static let secret = ""
+
     static var token: String {
-        return UserDefaults.standard.string(forKey: "access_toeken_key") ?? ""
+        return UserDefaults.savedToken
     }
     
     static var user: User? {
-        guard let data = UserDefaults.standard.data(forKey: "auto_memories_doll") else {
-            return nil
-        }
-        let user = try? JSONDecoder().decode(User.self, from: data)
-        return user
+        return UserDefaults.savedUser
     }
 }
 
