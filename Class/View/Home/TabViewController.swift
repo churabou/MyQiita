@@ -76,6 +76,7 @@ class TabViewController: UIViewController {
             v.setAutolayout()
             childeViews.append(v)
             containerView.addSubview(v)
+            addChildViewController(item.controller)
         }
     }
     

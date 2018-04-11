@@ -35,9 +35,13 @@ extension ArticleDetailViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
 
         print(article?.body)
+        
+        if let body = article?.body {
         print("呼ばれてはいる")
-        let md = "# invalid charactor aaa  \\n ### next column"
+//        let md = "# invalid charactor aaa  \\n ### next column"
+        let md = body.replacingOccurrences(of: "\n", with: "\\n")
         let js = "draw('\(md)');"
         self.webView.stringByEvaluatingJavaScript(from: js)
+        }
     }
 }
