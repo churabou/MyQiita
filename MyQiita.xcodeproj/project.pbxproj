@@ -30,7 +30,7 @@
 		C9F4C88B207D112500FFD7B0 /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C86C207D112500FFD7B0 /* ArticleListController.swift */; };
 		C9F4C88C207D112600FFD7B0 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C86D207D112500FFD7B0 /* ArticleListViewModel.swift */; };
 		C9F4C88D207D112600FFD7B0 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C86E207D112500FFD7B0 /* ArticleTableViewCell.swift */; };
-		C9F4C88E207D112600FFD7B0 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C86F207D112500FFD7B0 /* ArticleViewController.swift */; };
+		C9F4C88E207D112600FFD7B0 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C86F207D112500FFD7B0 /* ArticleDetailViewController.swift */; };
 		C9F4C88F207D112600FFD7B0 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C871207D112500FFD7B0 /* AuthController.swift */; };
 		C9F4C890207D112600FFD7B0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C872207D112500FFD7B0 /* AuthViewModel.swift */; };
 		C9F4C891207D112600FFD7B0 /* AuthViewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C873207D112500FFD7B0 /* AuthViewNavigator.swift */; };
@@ -94,7 +94,7 @@
 		C9F4C86C207D112500FFD7B0 /* ArticleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
 		C9F4C86D207D112500FFD7B0 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		C9F4C86E207D112500FFD7B0 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
-		C9F4C86F207D112500FFD7B0 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		C9F4C86F207D112500FFD7B0 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		C9F4C871207D112500FFD7B0 /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		C9F4C872207D112500FFD7B0 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C9F4C873207D112500FFD7B0 /* AuthViewNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewNavigator.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		C9A84F95207E08BA0002A42D /* ArticleDetail */ = {
 			isa = PBXGroup;
 			children = (
-				C9F4C86F207D112500FFD7B0 /* ArticleViewController.swift */,
+				C9F4C86F207D112500FFD7B0 /* ArticleDetailViewController.swift */,
 			);
 			path = ArticleDetail;
 			sourceTree = "<group>";
@@ -561,7 +561,7 @@
 				C9F4C883207D112500FFD7B0 /* QiitaSession.swift in Sources */,
 				C9F4C890207D112600FFD7B0 /* AuthViewModel.swift in Sources */,
 				C93E400D207A5C31002D306B /* Config.swift in Sources */,
-				C9F4C88E207D112600FFD7B0 /* ArticleViewController.swift in Sources */,
+				C9F4C88E207D112600FFD7B0 /* ArticleDetailViewController.swift in Sources */,
 				C9F4C88B207D112500FFD7B0 /* ArticleListController.swift in Sources */,
 				C9F4C897207D112600FFD7B0 /* LoginController.swift in Sources */,
 				C9F4C882207D112500FFD7B0 /* Article.swift in Sources */,
