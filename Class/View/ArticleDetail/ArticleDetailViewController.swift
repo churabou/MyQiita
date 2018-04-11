@@ -10,9 +10,13 @@ import UIKit
 
 class ArticleDetailViewController: UIViewController {
     
-    var url = ""
-    var body = ""
-    private var webView = UIWebView()
+    convenience init(article: Article) {
+        self.init(nibName: nil, bundle: nil)
+        self.article = article
+    }
+
+    fileprivate var article: Article?
+    fileprivate var webView = UIWebView()
     
     override func viewDidLoad() {
         webView.frame = view.frame
@@ -24,13 +28,16 @@ class ArticleDetailViewController: UIViewController {
     }
 }
 
+
+
 extension ArticleDetailViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
 
-        print(body)
-        let md = "# 日本語であそぼ\n ##aaa"
-        let js = "draw('\(md)'));"
+        print(article?.body)
+        print("呼ばれてはいる")
+        let md = "# invalid charactor aaa  \\n ### next column"
+        let js = "draw('\(md)');"
         self.webView.stringByEvaluatingJavaScript(from: js)
     }
 }

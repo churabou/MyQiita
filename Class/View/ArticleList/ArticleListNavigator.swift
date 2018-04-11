@@ -19,7 +19,7 @@ class ArticleListNavigator: Navigator, Navigatable {
         
         switch to {
         case .detaile(let article):
-            return ArticleDetailViewController()
+            return ArticleDetailViewController(article: article)
         }
     }
 }
