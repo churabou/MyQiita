@@ -22,7 +22,7 @@ class LoginNavigator: Navigator, Navigatable {
         case .auth:
             return AuthController()
         case .loginUser:
-            return LoginUserController()
+            return AuthedUserController()
         }
     }
 }

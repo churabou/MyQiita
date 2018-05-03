@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginUserNavigator: Navigator, Navigatable {
+class AuthedUserNavigator: Navigator, Navigatable {
     
     typealias DirectionType = Direction
     enum Direction {
