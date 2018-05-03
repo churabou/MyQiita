@@ -6,7 +6,7 @@
 //  Copyright © 2018年 ちゅーたつ. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class AuthViewModel: NSObject {
     
@@ -19,37 +19,18 @@ class AuthViewModel: NSObject {
     
     fileprivate let endpoint = "https://qiita.com/api/v2/oauth/authorize"
 
-    func loadLoginPage(_ webView: UIWebView) {
+    func loginPageRequest() -> URLRequest {
 
-        guard var urlComponents = URLComponents(string: endpoint) else {
-            return
-        }
+        var urlComponents = URLComponents(string: endpoint)!
         
         urlComponents.queryItems = [
             URLQueryItem(name: "client_id", value: Config.clientId),
             URLQueryItem(name: "scope", value: "read_qiita")
         ]
-        webView.loadRequest(URLRequest(url: urlComponents.url!))
+        return URLRequest(url: urlComponents.url!)
     }
     
-    func getToken(code: String) {
-        
-        let request = AccessTokenPostRequest(code: code)
-        QiitaSession.send(request) { (response) in
-            switch response {
-            case .success(let token):
-                UserDefaults.save(token: token.token)
-                self.navigator?.dismiss(to: .login)
-            case .failure(let message):
-                print("失敗した。\(message)")
-            }
-        }
-    }
-}
-
-extension AuthViewModel: UIWebViewDelegate {
-    
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func handleRedirect(request: URLRequest) -> Bool {
         
         guard let url = request.url else {
             return false
@@ -65,6 +46,20 @@ extension AuthViewModel: UIWebViewDelegate {
             getToken(code: String(code))
         }
         return true
+    }
+    
+    func getToken(code: String) {
+        
+        let request = AccessTokenPostRequest(code: code)
+        QiitaSession.send(request) { (response) in
+            switch response {
+            case .success(let token):
+                UserDefaults.save(token: token.token)
+                self.navigator?.dismiss(to: .login)
+            case .failure(let message):
+                print("失敗した。\(message)")
+            }
+        }
     }
 }
 

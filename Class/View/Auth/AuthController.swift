@@ -7,8 +7,7 @@
 //
 
 import SnapKit
-
-
+//webViewについて深く理解していなので？とにかくコード量が増えるだけなのでAuthViewは作らない。
 class AuthController: UIViewController {
     
     private var webView = UIWebView()
@@ -17,18 +16,36 @@ class AuthController: UIViewController {
     
     override func viewDidLoad() {
 
+        navigator = AuthViewNavigator(controller: self)
+        viewModel = AuthViewModel(navigator)
+        webView.delegate = self
         view.addSubview(webView)
-        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         webView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-
-        navigator = AuthViewNavigator(controller: self)
-        viewModel = AuthViewModel(navigator)
-        webView.delegate = viewModel
     }
     
+    //Todo: 呼ばれなかった。modalだと呼ばれないのか、あとで原因調べて学習する。
+    override func updateViewConstraints() {
+        webView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        super.updateViewConstraints()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
-        viewModel.loadLoginPage(webView)
+        webView.loadRequest(viewModel.loginPageRequest())
+    }
+}
+
+
+extension AuthController: UIWebViewDelegate {
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        return viewModel.handleRedirect(request: request)
     }
 }
