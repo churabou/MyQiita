@@ -10,6 +10,9 @@ import UIKit
 
 class BaseView: UIView {
     
+    
+    private var isConstraintsInitialized = false
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializeView()
@@ -19,5 +22,16 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    override func updateConstraints() {
+        
+        if !isConstraintsInitialized {
+            initializeConstraints()
+            isConstraintsInitialized = true
+        }
+        initializeConstraints()
+        super.updateConstraints()
+    }
     func initializeView() {}
+    func initializeConstraints() {}
 }

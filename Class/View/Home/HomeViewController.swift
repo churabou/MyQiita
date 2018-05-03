@@ -19,20 +19,18 @@ extension UIView {
 
 class HomeViewController: UITabBarController {
     
-    
-    // MARK: UITabBarController
-    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
-        
         let tabController = UINavigationController(rootViewController: TabViewController())
-        tabController.tabBarItem = UITabBarItem(title: "記事", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
-        
+        tabController.tabBarItem = UITabBarItem(title: "記事",
+                                                image: UIImage(named: ""),
+                                                selectedImage: UIImage(named: ""))
         
         let profileController = ProfileViewController()
-        profileController.tabBarItem = UITabBarItem(title: "プロフィール", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
+        profileController.tabBarItem = UITabBarItem(title: "プロフィール",
+                                                    image: UIImage(named: ""),
+                                                    selectedImage: UIImage(named: ""))
         
         setViewControllers([tabController, profileController], animated: false)
     }

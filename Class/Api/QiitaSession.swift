@@ -36,7 +36,6 @@ struct QiitaSession {
                 return
             }
             
-
             guard let httpResponse = response as? HTTPURLResponse else {
                 return
             }
@@ -54,12 +53,10 @@ struct QiitaSession {
             } else {
                 completion(.failure(message: "code: \(httpResponse.statusCode)"))
             }
-
-
-
         }.resume()
     }
 }
+
 
 
 

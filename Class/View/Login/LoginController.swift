@@ -11,38 +11,25 @@ import UIKit
 class LoginController: UIViewController {
     
     private var navigator: LoginNavigator?
+    private var baseView = LoginView()
 
-    private lazy var loginButton: UIButton = {
-        let b = UIButton()
-        b.backgroundColor = .pink
-        b.setTitle("ログインする", for: .normal)
-        b.setTitleColor(.white, for: .normal)
-        b.addTarget(self, action: #selector(actionLogin), for: .touchUpInside)
-        b.layer.borderWidth = 2
-        b.layer.borderColor = UIColor.white.cgColor
-        b.layer.cornerRadius = 30
-        return b
-    }()
-    
-    @objc private func actionLogin() {
-        navigator?.navigate(to: .auth, style: .modal)
+    override func loadView() {
+        self.view = baseView
     }
-    
+
     override func viewDidLoad() {
+        baseView.delegate = self
         navigator = LoginNavigator(controller: self)
-        view.backgroundColor = .pink
-        view.addSubview(loginButton)
-        
-        
-        loginButton.snp.makeConstraints { (make) in
-            make.width.equalTo(250)
-            make.height.equalTo(60)
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(-60)
-        }
     }
     
     func loginSuccess() {
         navigator?.navigate(to: .loginUser)
+    }
+}
+
+extension LoginController: LoginViewDelegate {
+    
+    func didTapLogin() {
+         navigator?.navigate(to: .auth, style: .modal)
     }
 }
