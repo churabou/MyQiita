@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
+import RxSwift
 
 class AuthedUserController: UIViewController {
 
     private var navigator: AuthedUserNavigator?
     private var viewModel = AuthedUserViewModel()
     private var baseView = AuthedUserView()
+    private let bag = DisposeBag()
     
     override func loadView() {
         self.view = baseView
@@ -21,11 +22,18 @@ class AuthedUserController: UIViewController {
     
     override func viewDidLoad() {
         navigator = AuthedUserNavigator(controller: self)
-        viewModel.fetchProfile()
         baseView.delegate = self
+        configureObserver()
+        viewModel.fetchProfile()
         //Todo: BaseViewのupdateConstraintsが呼ばれなかった。
         baseView.setNeedsUpdateConstraints()
         baseView.layoutIfNeeded()
+    }
+    
+    func configureObserver() {
+        viewModel.user.asObservable().subscribe(onNext: { (user) in
+            self.baseView.update(user: user)
+        }).disposed(by: bag)
     }
 }
 

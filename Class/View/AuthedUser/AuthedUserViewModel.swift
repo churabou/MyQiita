@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import RxSwift
 
 class AuthedUserViewModel {
     
+    var user: Variable<User> = Variable(User())
+
     func fetchProfile() {
 
         let request = AuthenticatedUserGetRequest()
@@ -17,6 +20,7 @@ class AuthedUserViewModel {
             switch response {
             case .success(let user):
                 UserDefaults.save(user: user)
+                self.user.value = user
             case .failure(let message):
                 print("失敗した。\(message)")
             }

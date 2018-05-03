@@ -10,10 +10,10 @@ import Foundation
 
 
 struct User: Codable {
-    var id: String
-    var name: String
-    var description: String
-    var profile_image_url: String
+    var id: String = ""
+    var name: String = ""
+    var description: String = ""
+    var profile_image_url: String = ""
 }
 
 struct AuthenticatedUserGetRequest: Request {

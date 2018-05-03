@@ -17,9 +17,9 @@ class AuthedUserView: BaseView {
     
     weak var delegate: AuthedUserViewDelegate?
     
-    func update(name: String, icon: String) {
-        label.text = "logging as \(name)"
-        imageView.kf.setImage(with: URL(string: icon))
+    func update(user: User) {
+        label.text = "logging as \(user.id)"
+        imageView.kf.setImage(with: URL(string: user.profile_image_url))
     }
     
     private lazy var imageView: UIImageView = {
