@@ -25,9 +25,8 @@ class AuthedUserController: UIViewController {
         baseView.delegate = self
         configureObserver()
         viewModel.fetchProfile()
-        //Todo: BaseViewのupdateConstraintsが呼ばれなかった。
+        //Todo: BaseViewのupdateConstraintsが呼ばれなかった。LoginControllerでは呼ばれていたのになぜ？
         baseView.setNeedsUpdateConstraints()
-        baseView.layoutIfNeeded()
     }
     
     func configureObserver() {
