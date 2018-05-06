@@ -116,7 +116,7 @@ class ProfileView: BaseView {
     
     func update(user: User) {
         
-        iconView.kf.setImage(with: URL(string: user.profile_image_url))
+        iconView.kf.setImage(with: URL(string: user.iconUrl))
         nameLabel.text = user.id
         intoroLabel.text = user.description
         print(user.description)

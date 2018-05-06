@@ -8,13 +8,6 @@
 
 import Foundation
 
-struct AccessToken: Codable {
-    var token: String
-    var client_id: String
-    var scopes: [String]
-}
-
-
 struct AccessTokenPostRequest: Request {
     
     typealias ResponseType = AccessToken

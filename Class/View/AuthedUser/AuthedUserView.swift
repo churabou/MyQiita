@@ -19,7 +19,7 @@ class AuthedUserView: BaseView {
     
     func update(user: User) {
         label.text = "logging as \(user.id)"
-        imageView.kf.setImage(with: URL(string: user.profile_image_url))
+        imageView.kf.setImage(with: URL(string: user.iconUrl))
     }
     
     private lazy var imageView: UIImageView = {

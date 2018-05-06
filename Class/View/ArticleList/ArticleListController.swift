@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 
+
 class ArticleListController: UIViewController {
 
     convenience init(target: ArticlePostRequest.Target) {
