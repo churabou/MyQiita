@@ -25,7 +25,7 @@
 		C9DD1753209AC660008FC224 /* AuthedUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD1752209AC65F008FC224 /* AuthedUserController.swift */; };
 		C9F4C882207D112500FFD7B0 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C85E207D112500FFD7B0 /* Article.swift */; };
 		C9F4C883207D112500FFD7B0 /* QiitaSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C85F207D112500FFD7B0 /* QiitaSession.swift */; };
-		C9F4C884207D112500FFD7B0 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C861207D112500FFD7B0 /* AccessToken.swift */; };
+		C9F4C884207D112500FFD7B0 /* AccessTokenPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C861207D112500FFD7B0 /* AccessTokenPostRequest.swift */; };
 		C9F4C885207D112500FFD7B0 /* ArticlePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C862207D112500FFD7B0 /* ArticlePostRequest.swift */; };
 		C9F4C886207D112500FFD7B0 /* AuthenticatedUserGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C863207D112500FFD7B0 /* AuthenticatedUserGetRequest.swift */; };
 		C9F4C887207D112500FFD7B0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C865207D112500FFD7B0 /* BaseView.swift */; };
@@ -93,7 +93,7 @@
 		C9DD1752209AC65F008FC224 /* AuthedUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthedUserController.swift; sourceTree = "<group>"; };
 		C9F4C85E207D112500FFD7B0 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		C9F4C85F207D112500FFD7B0 /* QiitaSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaSession.swift; sourceTree = "<group>"; };
-		C9F4C861207D112500FFD7B0 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		C9F4C861207D112500FFD7B0 /* AccessTokenPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenPostRequest.swift; sourceTree = "<group>"; };
 		C9F4C862207D112500FFD7B0 /* ArticlePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePostRequest.swift; sourceTree = "<group>"; };
 		C9F4C863207D112500FFD7B0 /* AuthenticatedUserGetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserGetRequest.swift; sourceTree = "<group>"; };
 		C9F4C865207D112500FFD7B0 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		C9F4C860207D112500FFD7B0 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				C9F4C861207D112500FFD7B0 /* AccessToken.swift */,
+				C9F4C861207D112500FFD7B0 /* AccessTokenPostRequest.swift */,
 				C9F4C862207D112500FFD7B0 /* ArticlePostRequest.swift */,
 				C9F4C863207D112500FFD7B0 /* AuthenticatedUserGetRequest.swift */,
 			);
@@ -586,7 +586,7 @@
 				C9DD174B209AB7F1008FC224 /* LoginView.swift in Sources */,
 				C9F4C885207D112500FFD7B0 /* ArticlePostRequest.swift in Sources */,
 				C9A84F97207E092D0002A42D /* ArticleListNavigator.swift in Sources */,
-				C9F4C884207D112500FFD7B0 /* AccessToken.swift in Sources */,
+				C9F4C884207D112500FFD7B0 /* AccessTokenPostRequest.swift in Sources */,
 				C9F4C887207D112500FFD7B0 /* BaseView.swift in Sources */,
 				C9F4C88D207D112600FFD7B0 /* ArticleTableViewCell.swift in Sources */,
 				C9F4C891207D112600FFD7B0 /* AuthViewNavigator.swift in Sources */,
