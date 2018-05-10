@@ -6,15 +6,14 @@
 
 ![](https://github.com/churabou/MyQiita/blob/master/demo.gif)
 
-設計はオリジナル。
+設計は一般的なMVVMと同じ感じ+Navigatorクラスを追加した感じ。
 
 - view
 - controller
 - viewModel
 - navigator
 
-を作って見た。一般的なMVVMと同じ感じ+Navigatorクラスを追加した感じ。
-RxSwiftを個人で使うメリットを感じていないが勉強のため使って見た。
+RxSwiftを勉強のため使って見た。
 
 <strong>今後</strong>
 
