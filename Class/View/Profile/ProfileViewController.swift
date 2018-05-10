@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         baseView.delegate = self
         baseView.update(user: Config.user!)
+        baseView.setNeedsUpdateConstraints()
         navigator = ProfileNavigator(controller: self)
     }
 }

@@ -41,6 +41,8 @@ class ProfileView: BaseView {
         let v = UIImageView()
         v.setAutolayout()
         v.layer.cornerRadius = 40
+        v.layer.borderWidth = 2
+        v.layer.borderColor = UIColor.white.cgColor
         v.clipsToBounds = true
         return v
     }()
@@ -48,8 +50,18 @@ class ProfileView: BaseView {
     private lazy var nameLabel: UILabel = {
         let v = UILabel()
         v.setAutolayout()
-        v.font = UIFont.systemFont(ofSize: 18)
+        v.font = UIFont.systemFont(ofSize: 20)
         v.textColor = .gray
+        v.textAlignment = .center
+        return v
+    }()
+    
+    private lazy var followLabel: UILabel = {
+        let v = UILabel()
+        v.setAutolayout()
+        v.font = UIFont.systemFont(ofSize: 10)
+        v.textColor = .gray
+        v.textAlignment = .center
         return v
     }()
     
@@ -68,19 +80,19 @@ class ProfileView: BaseView {
     }
     
     override func initializeView() {
-
+        
         backgroundColor = .white
         addSubview(logoutButton)
         addSubview(profileWrapperView)
         profileWrapperView.addSubview(iconView)
         profileWrapperView.addSubview(nameLabel)
-        profileWrapperView.addSubview(intoroLabel)
+        profileWrapperView.addSubview(followLabel)
+        addSubview(intoroLabel)
     }
     
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
+    override func initializeConstraints() {
+        
         logoutButton.snp.makeConstraints { (make) in
             make.width.equalTo(100)
             make.top.equalTo(30)
@@ -91,26 +103,33 @@ class ProfileView: BaseView {
         profileWrapperView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
             make.top.equalTo(logoutButton.snp.bottom).offset(10)
-            make.height.equalTo(250)
+            make.height.equalTo(150)
         }
         
         iconView.snp.makeConstraints { (make) in
             make.size.equalTo(80)
-            make.top.equalToSuperview()
-            make.left.equalTo(20)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-25)
         }
         
         nameLabel.snp.makeConstraints { (make) in
             make.width.equalTo(200)
-            make.top.equalTo(iconView.snp.top).offset(10)
-            make.left.equalTo(iconView.snp.right).offset(20)
+            make.top.equalTo(iconView.snp.bottom).offset(5)
+            make.centerX.equalToSuperview()
+        }
+        
+        followLabel.snp.makeConstraints { (make) in
+            make.width.equalTo(200)
+            make.top.equalTo(nameLabel.snp.bottom)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(20)
         }
         
         intoroLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(iconView.snp.bottom).offset(10)
-            make.left.equalTo(10)
-            make.right.equalTo(-10)
-            make.bottom.equalToSuperview()
+            make.top.equalTo(profileWrapperView.snp.bottom).offset(10)
+            make.height.equalTo(300)
+            make.left.equalTo(40)
+            make.right.equalTo(-40)
         }
     }
     
@@ -119,10 +138,7 @@ class ProfileView: BaseView {
         iconView.kf.setImage(with: URL(string: user.iconUrl))
         nameLabel.text = user.id
         intoroLabel.text = user.description
+        followLabel.text = "follow \(user.following)  follower: \(user.follower)"
         print(user.description)
-    }
-    //呼ぶにはどうするべきか
-    override func updateConstraints() {
-        super.updateConstraints()
     }
 }

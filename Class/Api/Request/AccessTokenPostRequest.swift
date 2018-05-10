@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 struct AccessTokenPostRequest: Request {
     
     typealias ResponseType = AccessToken

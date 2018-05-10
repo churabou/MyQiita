@@ -13,11 +13,15 @@ struct User: Codable {
     var name: String = ""
     var description: String = ""
     var iconUrl: String = ""
+    var following: Int = 0
+    var follower: Int = 0
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
         case description = "description"
         case iconUrl = "profile_image_url"
+        case following = "followees_count"
+        case follower = "followers_count"
     }
 }
